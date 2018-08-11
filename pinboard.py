@@ -98,11 +98,18 @@ def main(wf):
     # seconds old
     posts = wf.cached_data('posts', wrapper, max_age=600)
 
+    
     # If script was passed a query, use it to filter posts
     if query:
         #print "query: {}".format(query)
         posts = wf.filter(query, posts, key=search_key_for_post, min_score=20)
-        
+
+    # If we have no data to show, show a warning and stop
+    if not posts:  
+        wf.add_item('No posts found', icon=ICON_WARNING)
+        wf.send_feedback()
+        return 0
+
     # Loop through the returned posts and add an item for each to
     # the list of results for Alfred
     for post in posts:
