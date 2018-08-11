@@ -5,21 +5,229 @@
 	<key>bundleid</key>
 	<string>com.github.richardturnbull.pinboard</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>A51A188A-550C-4F8C-BD8C-96BA57D818C4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>833C820E-A542-4F1D-BF7F-F1A46BABF0D7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B5221B75-8FB1-4500-8D3B-9C4150019F2C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A51A188A-550C-4F8C-BD8C-96BA57D818C4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CD285B43-F641-4E5A-8B6B-F3A5EA86BE53</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED88CC8B-DEBA-46BA-8264-3BE2E2B5031C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string></string>
 	<key>description</key>
-	<string></string>
+	<string>Recent Pinboard posts</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Pinboard</string>
 	<key>objects</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>pbrecent</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Fetching posts....</string>
+				<key>script</key>
+				<string>python pinboard.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Show the last 20 pages I saved on Pinboard</string>
+				<key>title</key>
+				<string>Show recent posts on pinboard</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CD285B43-F641-4E5A-8B6B-F3A5EA86BE53</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.apple.Safari</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>ED88CC8B-DEBA-46BA-8264-3BE2E2B5031C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pbsetkey</string>
+				<key>subtext</key>
+				<string>Enter API key and press enter</string>
+				<key>text</key>
+				<string>Set Pinboard API Key</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B5221B75-8FB1-4500-8D3B-9C4150019F2C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python pinboard.py --setkey "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A51A188A-550C-4F8C-BD8C-96BA57D818C4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Your Pinboard API key was saved</string>
+				<key>title</key>
+				<string>API Key saved</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>833C820E-A542-4F1D-BF7F-F1A46BABF0D7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
-	<dict/>
+	<dict>
+		<key>833C820E-A542-4F1D-BF7F-F1A46BABF0D7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>660</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>A51A188A-550C-4F8C-BD8C-96BA57D818C4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>B5221B75-8FB1-4500-8D3B-9C4150019F2C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>110</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>CD285B43-F641-4E5A-8B6B-F3A5EA86BE53</key>
+		<dict>
+			<key>xpos</key>
+			<integer>110</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
+		<key>ED88CC8B-DEBA-46BA-8264-3BE2E2B5031C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
+	</dict>
 	<key>webaddress</key>
 	<string></string>
 </dict>
